@@ -29,3 +29,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 1. Needs to install `factclick` to resolve 300ms click delay on some mobile device.
 
 1. Needs to install `border.css` to fix 1px border issue across different device pixel ratio.
+
+##### Styles
+
+1. Utilize Stylus and Stylus-loader
+
+1. Utilize vue-awesome-swipe for swiper
