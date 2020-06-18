@@ -1,6 +1,6 @@
 # qunar
 
-> A travel web app
+> A travel web app mock up
 
 ## Build Setup
 
