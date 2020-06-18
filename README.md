@@ -35,3 +35,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 1. Utilize Stylus and Stylus-loader
 
 1. Utilize vue-awesome-swipe for swiper
+
+1. Use mixins and variables
