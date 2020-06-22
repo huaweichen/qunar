@@ -21,23 +21,6 @@
           pagination: '.swiper-pagination',
           loop: true,
         }
-    //     swiperList: [
-    //       {
-    //         id: '1',
-    //         imgUrl: require('@/assets/images/brisbane-1.jpg'),
-    //       }, {
-    //         id: '2',
-    //         imgUrl: require('@/assets/images/brisbane-2.jpg'),
-    //       }, {
-    //         id: '3',
-    //         imgUrl: require('@/assets/images/brisbane-3.jpg'),
-    //       }, {
-    //         id: '4',
-    //         imgUrl: require('@/assets/images/brisbane-4.jpg'),
-    //       }, {
-    //         id: '5',
-    //         imgUrl: require('@/assets/images/brisbane-5.jpg'),
-    //       }],
       }
     },
     computed: {

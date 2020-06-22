@@ -19,30 +19,6 @@
     name: 'HomeRecommend',
     props: {
       recommendList: Array
-    },
-    data () {
-      return {
-        // recommends: [
-        //   {
-        //     id: 1,
-        //     name: 'Shear Water',
-        //     description: 'Good for beginners on Low tide.',
-        //     imgSrc: require('images/recommend-1.jpg')
-        //   },
-        //   {
-        //     id: 2,
-        //     name: 'Sparta Arena',
-        //     description: 'This multifunctional building.',
-        //     imgSrc: require('images/recommend-2.jpg')
-        //   },
-        //   {
-        //     id: 3,
-        //     name: 'Flagstone Water',
-        //     description: 'A stunning state-of-the-art water park.',
-        //     imgSrc: require('images/recommend-3.jpg')
-        //   }
-        // ]
-      }
     }
   }
 </script>

@@ -20,43 +20,7 @@
     name: 'HomeWeekend',
     props: {
       weekendList: Array
-    },
-    data () {
-      return {
-        // recommends: [
-        //   {
-        //     id: 1,
-        //     name: 'Super Start Arena',
-        //     description: 'This multifunctional building',
-        //     imgSrc: require('images/weekend-1.jpg'),
-        //   },
-        //   {
-        //     id: 2,
-        //     name: 'Pagoda',
-        //     description: 'A good place to worship',
-        //     imgSrc: require('images/weekend-2.jpg'),
-        //   },
-        //   {
-        //     id: 3,
-        //     name: 'Birds Market',
-        //     description: 'A good market with birds bargains',
-        //     imgSrc: require('images/weekend-3.jpg'),
-        //   },
-        //   {
-        //     id: 4,
-        //     name: 'Zebra Feeding',
-        //     description: 'Feed the zebras',
-        //     imgSrc: require('images/weekend-4.jpg'),
-        //   },
-        //   {
-        //     id: 5,
-        //     name: 'Trees',
-        //     description: 'Trees, a lot of trees',
-        //     imgSrc: require('images/weekend-5.jpg'),
-        //   },
-        // ],
-      }
-    },
+    }
   }
 </script>
 
