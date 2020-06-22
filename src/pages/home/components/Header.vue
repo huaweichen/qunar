@@ -8,7 +8,7 @@
             Search ...
         </div>
         <div class="header-right">
-            City
+            {{ this.city }}
             <span class="icofont icofont-caret-down header-right-icon"></span>
         </div>
     </div>
@@ -17,6 +17,9 @@
 <script>
   export default {
     name: 'HomeHeader',
+    props: {
+      city: String
+    }
   }
 </script>
 

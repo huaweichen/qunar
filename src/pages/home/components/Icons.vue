@@ -1,12 +1,12 @@
 <template>
     <div class="home-icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page, index) of pages" :key="index">
                 <div class="icon" v-for="icon of page" :key="icon.id">
                     <div class="icon-image">
-                        <img class="icon-image-content" :src="icon.imgSrc" :alt="icon.altName">
+                        <img class="icon-image-content" :src="icon.imgUrl" :alt="icon.desc">
                     </div>
-                    <p class="icon-description">{{ icon.description }}</p>
+                    <p class="icon-description">{{ icon.desc }}</p>
                 </div>
             </swiper-slide>
         </swiper>
@@ -16,88 +16,94 @@
 <script>
   export default {
     name: 'HomeIcons',
+    props: {
+      iconList: Array
+    },
     data () {
       return {
-        iconList: [
-          {
-            id: 1,
-            imgSrc: require('images/flight.png'),
-            altName: 'Flight',
-            description: 'Flight',
-          },
-          {
-            id: 2,
-            imgSrc: require('images/train.png'),
-            altName: 'Train',
-            description: 'Train',
-          },
-          {
-            id: 3,
-            imgSrc: require('images/piao.png'),
-            altName: 'Ticket',
-            description: 'Ticket',
-          },
-          {
-            id: 4,
-            imgSrc: require('@/assets/images/hotel.png'),
-            altName: 'Hotel',
-            description: 'Hotel',
-          },
-          {
-            id: 5,
-            imgSrc: require('images/package.png'),
-            altName: 'Package',
-            description: 'Package',
-          },
-          {
-            id: 6,
-            imgSrc: require('images/pagoda.png'),
-            altName: 'Package',
-            description: 'Special',
-          },
-          {
-            id: 7,
-            imgSrc: require('images/horse.png'),
-            altName: 'Hotel',
-            description: 'Restaurant',
-          },
-          {
-            id: 8,
-            imgSrc: require('images/hiking.png'),
-            altName: 'Train',
-            description: 'Hot Hot Hot Hot',
-          },
-          {
-            id: 9,
-            imgSrc: require('images/hall.png'),
-            altName: 'Train',
-            description: 'Hot Deal',
-          },
-          {
-            id: 10,
-            imgSrc: require('images/castle.png'),
-            altName: 'Train',
-            description: 'Hot Food',
-          },
-          {
-            id: 11,
-            imgSrc: require('images/scenary.png'),
-            altName: 'Train',
-            description: 'Hot Water',
-          },
-          {
-            id: 12,
-            imgSrc: require('images/one-day.png'),
-            altName: 'Train',
-            description: 'Hot Dog',
-          },
-          {
-            id: 13,
-            imgSrc: require('images/flower.png'),
-            altName: 'Train',
-            description: 'Hot Woman',
-          },
-        ],
+        swiperOption: {
+          autoplay: false
+        }
+        // iconList: [
+        //   {
+        //     id: 1,
+        //     imgSrc: require('images/flight.png'),
+        //     altName: 'Flight',
+        //     description: 'Flight',
+        //   },
+        //   {
+        //     id: 2,
+        //     imgSrc: require('images/train.png'),
+        //     altName: 'Train',
+        //     description: 'Train',
+        //   },
+        //   {
+        //     id: 3,
+        //     imgSrc: require('images/piao.png'),
+        //     altName: 'Ticket',
+        //     description: 'Ticket',
+        //   },
+        //   {
+        //     id: 4,
+        //     imgSrc: require('@/assets/images/hotel.png'),
+        //     altName: 'Hotel',
+        //     description: 'Hotel',
+        //   },
+        //   {
+        //     id: 5,
+        //     imgSrc: require('images/package.png'),
+        //     altName: 'Package',
+        //     description: 'Package',
+        //   },
+        //   {
+        //     id: 6,
+        //     imgSrc: require('images/pagoda.png'),
+        //     altName: 'Package',
+        //     description: 'Special',
+        //   },
+        //   {
+        //     id: 7,
+        //     imgSrc: require('images/horse.png'),
+        //     altName: 'Hotel',
+        //     description: 'Restaurant',
+        //   },
+        //   {
+        //     id: 8,
+        //     imgSrc: require('images/hiking.png'),
+        //     altName: 'Train',
+        //     description: 'Hot Hot Hot Hot',
+        //   },
+        //   {
+        //     id: 9,
+        //     imgSrc: require('images/hall.png'),
+        //     altName: 'Train',
+        //     description: 'Hot Deal',
+        //   },
+        //   {
+        //     id: 10,
+        //     imgSrc: require('images/castle.png'),
+        //     altName: 'Train',
+        //     description: 'Hot Food',
+        //   },
+        //   {
+        //     id: 11,
+        //     imgSrc: require('images/scenary.png'),
+        //     altName: 'Train',
+        //     description: 'Hot Water',
+        //   },
+        //   {
+        //     id: 12,
+        //     imgSrc: require('images/one-day.png'),
+        //     altName: 'Train',
+        //     description: 'Hot Dog',
+        //   },
+        //   {
+        //     id: 13,
+        //     imgSrc: require('images/flower.png'),
+        //     altName: 'Train',
+        //     description: 'Hot Woman',
+        //   },
+        // ],
       }
     },
     computed: {

@@ -2,11 +2,11 @@
     <div>
         <div class="title">Recommend:</div>
         <ul>
-            <li class="item border-bottom" v-for="recommend of recommends" :key="recommend.id">
-                <img class="item-img" :src="recommend.imgSrc" :alt="recommend.name">
+            <li class="item border-bottom" v-for="recommend of recommendList" :key="recommend.id">
+                <img class="item-img" :src="recommend.imgUrl" :alt="recommend.title">
                 <div class="item-info">
-                    <p class="item-info-title">{{ recommend.name }}</p>
-                    <p class="item-info-description">{{ recommend.description }}</p>
+                    <p class="item-info-title">{{ recommend.title }}</p>
+                    <p class="item-info-description">{{ recommend.desc }}</p>
                     <button class="item-info-button">More ...</button>
                 </div>
             </li>
@@ -17,28 +17,31 @@
 <script>
   export default {
     name: 'HomeRecommend',
+    props: {
+      recommendList: Array
+    },
     data () {
       return {
-        recommends: [
-          {
-            id: 1,
-            name: 'Shear Water',
-            description: 'Good for beginners on Low tide.',
-            imgSrc: require('images/recommend-1.jpg')
-          },
-          {
-            id: 2,
-            name: 'Sparta Arena',
-            description: 'This multifunctional building.',
-            imgSrc: require('images/recommend-2.jpg')
-          },
-          {
-            id: 3,
-            name: 'Flagstone Water',
-            description: 'A stunning state-of-the-art water park.',
-            imgSrc: require('images/recommend-3.jpg')
-          }
-        ]
+        // recommends: [
+        //   {
+        //     id: 1,
+        //     name: 'Shear Water',
+        //     description: 'Good for beginners on Low tide.',
+        //     imgSrc: require('images/recommend-1.jpg')
+        //   },
+        //   {
+        //     id: 2,
+        //     name: 'Sparta Arena',
+        //     description: 'This multifunctional building.',
+        //     imgSrc: require('images/recommend-2.jpg')
+        //   },
+        //   {
+        //     id: 3,
+        //     name: 'Flagstone Water',
+        //     description: 'A stunning state-of-the-art water park.',
+        //     imgSrc: require('images/recommend-3.jpg')
+        //   }
+        // ]
       }
     }
   }
