@@ -7,10 +7,12 @@
             <span class="icofont icofont-search"></span>
             Search ...
         </div>
-        <div class="header-right">
-            {{ this.city }}
-            <span class="icofont icofont-caret-down header-right-icon"></span>
-        </div>
+        <router-link to="/city">
+            <div class="header-right">
+                {{ this.city }}
+                <span class="icofont icofont-caret-down header-right-icon"></span>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -18,8 +20,8 @@
   export default {
     name: 'HomeHeader',
     props: {
-      city: String
-    }
+      city: String,
+    },
   }
 </script>
 
@@ -27,10 +29,10 @@
     @import '~styles/variables.styl'
     .header
         display flex
-        line-height .86rem
+        line-height $headerHeight
         background $bgColor
         color white
-        height .86rem
+        height $headerHeight
 
         .header-left
             width .64rem
@@ -40,16 +42,17 @@
                 text-align center
                 font-size .5rem
                 margin-left .15rem
-                line-height .86rem
+                line-height $headerHeight
 
         .header-right
             width 1.24rem
             float right
             text-align center
+            color: white
 
             .header-right-icon
                 font-size: .24rem
-                line-height .86rem
+                line-height $headerHeight
 
         .header-input
             flex 1
