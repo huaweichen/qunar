@@ -2,14 +2,19 @@
     <div>
         <div class="title">Recommend:</div>
         <ul>
-            <li class="item border-bottom" v-for="recommend of recommendList" :key="recommend.id">
+            <router-link
+                    tag="li"
+                    class="item border-bottom"
+                    :key="recommend.id"
+                    :to="'/detail/' + recommend.id"
+                    v-for="recommend of recommendList">
                 <img class="item-img" :src="recommend.imgUrl" :alt="recommend.title">
                 <div class="item-info">
                     <p class="item-info-title">{{ recommend.title }}</p>
                     <p class="item-info-description">{{ recommend.desc }}</p>
                     <button class="item-info-button">More ...</button>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
