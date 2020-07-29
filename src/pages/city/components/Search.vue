@@ -107,7 +107,7 @@
         top 1.58rem
         left 0
         right 0
-        botton 0
+        bottom 0
         background #eeeeee
         .search-item
             line-height .62rem
