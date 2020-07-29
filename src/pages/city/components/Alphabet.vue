@@ -1,6 +1,7 @@
 <template>
     <ul class="list">
-        <li class="item"
+        <li
+            class="item"
             v-for="item of letters"
             :key="item"
             :ref="item"
@@ -8,7 +9,8 @@
             @touchstart="handleTouchStart"
             @touchmove="handleTouchMove"
             @touchend="handleTouchEnd"
-        >{{ item }}
+        >
+            {{ item }}
         </li>
     </ul>
 </template>
@@ -40,7 +42,7 @@
     },
     methods: {
       handleLetterClick: function (e) {
-        this.$emit('change', e.target.innerHTML)
+        this.$emit('change', e.target.innerText)
       },
       handleTouchStart: function () {
         this.touchStatus = true

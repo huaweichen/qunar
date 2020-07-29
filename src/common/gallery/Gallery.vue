@@ -70,6 +70,4 @@
             .swiper-pagination
                 color white
                 bottom -1rem
-
-
 </style>

@@ -1,12 +1,25 @@
 <template>
-    <div ref="search">
+    <div>
         <div class="search">
             <input class="search-input" type="text" placeholder="输入城市名或拼音" v-model="keyword">
         </div>
-        <div class="search-content" v-show="keyword">
+        <div
+            class="search-content"
+            v-show="keyword"
+            ref="search"
+        >
             <ul>
-                <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleCityClick(item.name)">{{ item.name }}</li>
-                <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
+                <li
+                    class="search-item border-bottom"
+                    v-for="item of list"
+                    :key="item.id"
+                    @click="handleCityClick(item.name)"
+                >
+                    {{ item.name }}
+                </li>
+                <li class="search-item border-bottom" v-show="hasNoData">
+                    没有找到匹配数据
+                </li>
             </ul>
         </div>
     </div>
@@ -28,7 +41,9 @@
       ...mapMutations(['changeCity'])
     },
     mounted () {
-      this.scroll = new BScroll(this.$refs.search, {click: true})
+      this.scroll = new BScroll(this.$refs.search, {
+        click: true
+      })
     },
     data () {
       return {
@@ -73,30 +88,27 @@
 <style lang="stylus" scoped>
     @import '~styles/variables.styl'
     .search
-        padding 0 .1rem
         height .72rem
+        padding 0 .1rem
         background $bgColor
-
         .search-input
-            height .62rem
-            text-align center
             box-sizing border-box
-            padding 0 .1rem
-            border-radius .06rem
             width 100%
+            height .62rem
+            padding 0 .1rem
             line-height .62rem
+            text-align center
+            border-radius .06rem
             color #666666
-
     .search-content
         z-index 1
+        overflow hidden
         position absolute
         top 1.58rem
         left 0
         right 0
         botton 0
-        overflow hidden
         background #eeeeee
-
         .search-item
             line-height .62rem
             padding-left .2rem
