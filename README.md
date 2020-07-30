@@ -1,3 +1,5 @@
+![Preview](./qunar.gif)
+
 # qunar
 
 > A travel web app mock up
