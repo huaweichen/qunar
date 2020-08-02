@@ -10,25 +10,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'HomeSwiper',
-    props: {
-      swiperList: Array
-    },
-    data () {
-      return {
-        swiperOption: {
-          pagination: '.swiper-pagination',
-          loop: true,
-        }
-      }
-    },
-    computed: {
-      swiperShow () {
-        return this.swiperList.length > 0
-      }
+    import {computed} from "vue";
+
+    export default {
+        name: 'HomeSwiper',
+        props: {
+            swiperList: Array
+        },
+        setup(props) {
+            const data = {
+                swiperOption: {
+                    pagination: '.swiper-pagination',
+                    loop: true,
+                }
+            }
+
+            const swiperShow = computed(() => props.swiperList.length > 0)
+
+            return {
+                data,
+                swiperShow
+            }
+        },
     }
-  }
 </script>
 
 <style lang="stylus" scoped>

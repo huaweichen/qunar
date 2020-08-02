@@ -14,34 +14,36 @@
 </template>
 
 <script>
-  export default {
-    name: 'HomeIcons',
-    props: {
-      iconList: Array
-    },
-    data () {
-      return {
-        swiperOption: {
-          autoplay: false
-        }
-      }
-    },
-    computed: {
-      pages () {
-        const pages = []
+    import {computed} from 'vue'
+    export default {
+        name: 'HomeIcons',
+        props: {
+            iconList: Array
+        },
+        setup (props) {
+            const swiperOption = {
+                autoplay: false
+            }
+            const pages = computed(() => {
+                const pages = []
 
-        this.iconList.forEach((item, index) => {
-          const page = Math.floor(index / 8)
-          if (typeof pages[page] === 'undefined') {
-            pages[page] = []
-          }
-          pages[page].push(item)
-        })
+                props.iconList.forEach((item, index) => {
+                    const page = Math.floor(index / 8)
+                    if (typeof pages[page] === 'undefined') {
+                        pages[page] = []
+                    }
+                    pages[page].push(item)
+                })
 
-        return pages
-      },
-    },
-  }
+                return pages
+            })
+
+            return {
+                swiperOption,
+                pages
+            }
+        },
+    }
 </script>
 
 <style lang="stylus" scoped>

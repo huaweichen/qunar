@@ -17,15 +17,21 @@
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex'
+    import {useStore} from 'vuex'
 
-  export default {
-    name: 'HomeHeader',
-    computed: {
-      ...mapState(['city']),
-      ...mapGetters(['doubleCity'])
-    },
-  }
+    export default {
+        name: 'HomeHeader',
+        setup() {
+            const store = useStore()
+            const city = store.state.city
+            const doubleCity = store.getters.doubleCity
+
+            return {
+                city,
+                doubleCity
+            }
+        },
+    }
 </script>
 
 <style lang="stylus" scoped>
