@@ -1,9 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router';
 
-Vue.use(Router)
+export default createRouter({
+  history: createWebHashHistory(),
 
-export default new Router({
   routes: [
     {
       path: '/',
@@ -19,7 +18,8 @@ export default new Router({
       component: () => import('@/pages/detail/Detail'),
     },
   ],
+
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
-  },
-})
+  }
+});
