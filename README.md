@@ -1,5 +1,9 @@
 # new-qunar
 
+## Project preview
+
+![Preview](./qunar.gif)
+
 ## Project setup
 ```
 npm install

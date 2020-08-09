@@ -4,7 +4,9 @@
             <img class="banner-img" :src="bannerImg"/>
             <div class="banner-info">
                 <div class="banner-title">{{sightName}}</div>
-                <div class="banner-number"><span class="icofont icofont-ui-image banner-icon"></span> {{galleryImgs.length}}</div>
+                <div class="banner-number"><span class="icofont icofont-ui-image banner-icon"></span>
+                    {{galleryImgs.length}}
+                </div>
             </div>
         </div>
         <fade-animation>
@@ -14,34 +16,38 @@
 </template>
 
 <script>
-  import CommonGallery from 'common/gallery/Gallery'
-  import FadeAnimation from 'common/fade/FadeAnimation'
+    import CommonGallery from 'common/gallery/Gallery'
+    import FadeAnimation from 'common/fade/FadeAnimation'
+    import {ref} from "vue";
 
-  export default {
-    name: 'DetailBanner',
-    props: {
-      sightName: String,
-      bannerImg: String,
-      galleryImgs: Array,
-    },
-    components: {
-      CommonGallery,
-      FadeAnimation
-    },
-    data () {
-      return {
-        showGallery: false,
-      }
-    },
-    methods: {
-      handleBannerClick () {
-        this.showGallery = true
-      },
-      handleGalleryClose () {
-        this.showGallery = false
-      }
-    },
-  }
+    export default {
+        name: 'DetailBanner',
+        props: {
+            sightName: String,
+            bannerImg: String,
+            galleryImgs: Array,
+        },
+        components: {
+            CommonGallery,
+            FadeAnimation
+        },
+        setup() {
+            const showGallery = ref(false)
+
+            function handleBannerClick() {
+                showGallery.value = true
+            }
+            function handleGalleryClose() {
+                showGallery.value = false
+            }
+
+            return {
+                showGallery,
+                handleBannerClick,
+                handleGalleryClose
+            }
+        },
+    }
 </script>
 
 <style lang="stylus" scoped>
